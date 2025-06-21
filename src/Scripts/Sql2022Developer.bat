@@ -63,9 +63,14 @@
  exit /b
 #>
 
-$SqlInstance = "SQLDEVELOPER"
+$SqlInstance = "MSSQLSERVER"
 $SqlFeatures = "SQLENGINE"
-$sqlInstallArgs = "/qs /ACTION=Install /FEATURES=${SqlFeatures} /INSTANCENAME=${SqlInstance} /SQLSYSADMINACCOUNTS=BUILTIN\Administrators /IACCEPTSQLSERVERLICENSETERMS=true /UPDATEENABLED=false /USEMICROSOFTUPDATE=false /ENU"
+$SaPassword = "snapdragon"
+$InstanceDir = "D:\Microsoft SQL Server"
+$DataDir = "${InstanceDir}\Data"
+$LogDir = "${InstanceDir}\Log"
+$BackupDir = "${InstanceDir}\Backup"
+$sqlInstallArgs = "/qs /ACTION=Install /FEATURES=${SqlFeatures} /INSTANCENAME=${SqlInstance} /SQLSYSADMINACCOUNTS=BUILTIN\Administrators /IACCEPTSQLSERVERLICENSETERMS=true /UPDATEENABLED=false /USEMICROSOFTUPDATE=false /ENU /SECURITYMODE=SQL /SAPWD=""${SaPassword}"" /INSTANCEDIR=""${InstanceDir}"" /INSTALLSQLDATADIR=""${DataDir}"" /SQLUSERDBDIR=""${DataDir}"" /SQLUSERDBLOGDIR=""${LogDir}"" /SQLBACKUPDIR=""${BackupDir}"""
 $sqlInstallerPath = "./SQLServer2022-DEV-x64-ENU.exe"
 $sqlBoxInstallerPath = "./SQLServer2022-DEV-x64-ENU.box"
 $sqlDownloadUrl = "https://download.microsoft.com/download/3/8/d/38de7036-2433-4207-8eae-06e247e17b25/SQLServer2022-DEV-x64-ENU.exe"
