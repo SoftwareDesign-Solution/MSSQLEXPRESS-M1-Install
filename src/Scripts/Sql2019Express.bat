@@ -70,7 +70,7 @@ $InstanceDir = "D:\Microsoft SQL Server"
 $DataDir = "${InstanceDir}\Data"
 $LogDir = "${InstanceDir}\Log"
 $BackupDir = "${InstanceDir}\Backup"
-$sqlInstallArgs = "/qs /ACTION=Install /FEATURES=${SqlFeatures} /INSTANCENAME=${SqlInstance} /IACCEPTSQLSERVERLICENSETERMS=true /UPDATEENABLED=false /USEMICROSOFTUPDATE=false /ENU /SECURITYMODE=SQL /SAPWD=""${SaPassword}"" /INSTANCEDIR=""${InstanceDir}"" /INSTALLSQLDATADIR=""${DataDir}"" /SQLUSERDBDIR=""${DataDir}"" /SQLUSERDBLOGDIR=""${LogDir}"" /SQLBACKUPDIR=""${BackupDir}"""
+$sqlInstallArgs = "/qs /ACTION=Install /FEATURES=${SqlFeatures} /INSTANCENAME=${SqlInstance} /IACCEPTSQLSERVERLICENSETERMS=true /UPDATEENABLED=false /USEMICROSOFTUPDATE=false /ENU /SECURITYMODE=SQL /SAPWD=""${SaPassword}"" /INSTANCEDIR=""${InstanceDir}"""
 $sqlInstallerPath = "./SQLEXPR_x64_ENU.exe"
 $sqlDownloadUrl = "https://download.microsoft.com/download/8/4/c/84c6c430-e0f5-476d-bf43-eaaa222a72e0/SQLEXPR_x64_ENU.exe"
 
